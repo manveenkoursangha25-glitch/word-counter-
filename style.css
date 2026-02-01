@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1d2671, #c33764);
+    color: white;
+}
+
+.container {
+    width: 500px;
+    padding: 30px;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    resize: none;
+    font-size: 16px;
+}
+
+/* CSS Word Counter Trick */
+textarea {
+    counter-reset: word;
+}
+
+textarea::placeholder {
+    color: #ddd;
+}
+
+textarea:focus {
+    background: #fff;
+    color: #000;
+}
+
+/* Count words by spaces typed */
+textarea:valid {
+    counter-increment: word;
+}
+
+.counter {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.count::before {
+    content: counter(word);
+    font-weight: bold;
+    margin-left: 8px;
+}
+
+.note {
+    margin-top: 15px;
+    font-size: 12px;
+    opacity: 0.8;
+}
